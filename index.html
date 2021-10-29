@@ -29,18 +29,16 @@
 </head>
 <body class="purple darken-4 white-text">
 <header id="header" class="container deep-purple">
-    <h1>Anotações</h1>
+    <h1>Calculo de IMC</h1>
 </header>
 
 <div id="content" class="container deep-purple lighten-3">
-    <p>Adicione suas anotações a seguir:</p>
-
     <h4 id="err"></h4>
 
     <form id="form-add-note" class="row">
-        <input type="number" placeholder="Peso" class="col-2 white" style="border-right: 2px solid black;"/>
+        <input type="number" placeholder="Peso" class="col-2 white"/>
         <input type="number" placeholder="Altura" class="col-2 white"/>
-        <input type="submit" value="+" class="purple darken-4 white-text col-1"/>
+        <button type="button" class="purple darken-4 white-text col-2" onclick="calcular()">Calcular</button>
     </form>
 
     <ul id="notes">
@@ -48,5 +46,8 @@
     </ul>
 </div>
 
+<script src="js/object.observe.polyfill.js"></script>
+<script src="js/array.observe.polyfill.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
