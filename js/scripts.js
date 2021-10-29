@@ -47,24 +47,23 @@ let updateList = function () {
 }
 
 let createNote = function () {
-    let input = document.querySelector('#form-add-note input[type="text"]');
-    let value = input.value;
+    let peso = document.getElementById("peso").value;
+    let altura = document.getElementById("altura").value;
+    let result = 0.00;
 
-    if(value === ''){
-        let id = document.getElementById('err');
-        let string = 'Não foi possivel adicionar uma anotação, insira um conteudo';
-
-        id.innerHTML = string;
-    }else{
-        let id = document.getElementById('err');
-        let string = '';
-
-        id.innerHTML = string;
-
-        notes.data.push(value);
+    if(peso === '')
+        document.getElementById('err').innerHTML = "Peso não pode ser vazio";
+    else if(altura === '')
+        document.getElementById('err').innerHTML = "Altura não pode ser vazio";
+    else if(altura === '' && peso === '') 
+        document.getElementById('err').innerHTML = "Peso e altura não podem ser vazios";
+    else{
+        result = parseFloat(peso) / (parseFloat(altura)*parseFloat(altura));
+        notes.data.push(result);
     }
 
-    input.value = "";
+    peso = '';
+    altura = '';
 };
 
 updateList();
